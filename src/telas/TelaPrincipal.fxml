@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane fx:id="scTodo" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controles.TelaPrincipalController">
+   <center>
+      <HBox fx:id="scMeio" prefWidth="800.0">
+         <children>
+            <AnchorPane fx:id="scImg" prefHeight="293.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@logoUP.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <AnchorPane id="AnchorPane" fx:id="scCont" prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <Label layoutX="292.0" layoutY="192.0" text="Texto teste" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </center>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Controle Gastos">
+            <items>
+              <MenuItem fx:id="mnTab" mnemonicParsing="false" onAction="#abrirTab" text="Tabela" />
+                  <MenuItem fx:id="mnGraf" mnemonicParsing="false" onAction="#abrirGraf" text="Gráfico" />
+                  <MenuItem fx:id="mnImp" mnemonicParsing="false" onAction="#imprimir" text="Impressão" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Manutenção">
+            <items>
+                  <MenuItem fx:id="mnGst" mnemonicParsing="false" onAction="#alterarGasto" text="Gasto" />
+              <MenuItem fx:id="mnTpGst" mnemonicParsing="false" onAction="#alterarTipoGasto" text="Tipo Gasto" />
+                  <MenuItem fx:id="mnCrt" mnemonicParsing="false" onAction="#alterarCartao" text="Cartão" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <Label text="Label" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </Label>
+   </bottom>
+</BorderPane>

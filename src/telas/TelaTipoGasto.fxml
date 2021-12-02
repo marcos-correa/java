@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane fx:id="scTpGst" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controles.TelaTipoGastoController">
+   <center>
+      <HBox fx:id="scCtn">
+         <children>
+            <AnchorPane id="AnchorPane" fx:id="scTab" prefHeight="315.0" prefWidth="243.0">
+    
+</AnchorPane>
+            <AnchorPane fx:id="scCad" prefHeight="268.0" prefWidth="357.0" visible="false">
+               <children>
+                  <Label fx:id="lbCdg" layoutX="39.0" layoutY="31.0" text="Código" />
+                  <Label fx:id="lbDsc" layoutX="39.0" layoutY="94.0" text="Descrição" />
+                  <TextField fx:id="txCdg" layoutX="118.0" layoutY="27.0" />
+                  <TextField fx:id="txDsc" layoutX="118.0" layoutY="90.0" />
+                  <Button fx:id="btGrv" layoutX="53.0" layoutY="237.0" mnemonicParsing="false" onAction="#gravar" text="Gravar" />
+                  <Button fx:id="btExc" layoutX="168.0" layoutY="237.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
+                  <Button fx:id="btSair" layoutX="274.0" layoutY="237.0" mnemonicParsing="false" onAction="#sair" text="Sair" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </center>
+   <top>
+      <AnchorPane prefHeight="106.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btVslTudo" layoutX="14.0" layoutY="42.0" mnemonicParsing="false" onAction="#VisualizarTudo" text="Visualizar Dados" />
+            <Label fx:id="lbCdg" layoutX="188.0" layoutY="46.0" text="Código tipo Gasto" />
+            <TextField fx:id="txTpGst" layoutX="291.0" layoutY="42.0" />
+            <ToggleButton fx:id="btCnt" layoutX="452.0" layoutY="42.0" mnemonicParsing="false" onAction="#consultar" text="Consultar" />
+            <ToggleButton fx:id="btNv" layoutX="530.0" layoutY="42.0" mnemonicParsing="false" onAction="#inserir" text="Novo" />
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

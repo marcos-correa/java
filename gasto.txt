@@ -1,0 +1,24 @@
+CREATE TABLE IF NOT EXISTS TipoGasto( 
+        idTipoGasto INT NOT NULL,
+        descricaoTipo VARCHAR(20) NOT NULL,
+        PRIMARY KEY (idTipoGasto));
+
+CREATE TABLE IF NOT EXISTS Cartao(
+        idCartao VARCHAR(16) NOT NULL, 
+        bandeira VARCHAR(20) NOT NULL, 
+        nome VARCHAR(20) NOT NULL, 
+        dataValidade DATE NOT NULL, 
+        PRIMARY KEY (idCartao));
+
+CREATE TABLE IF NOT EXISTS Gasto( 
+        idGasto INT NOT NULL,
+        data DATE NOT NULL,
+        valor FLOAT NOT NULL,
+        idFormaPagamento VARCHAR(20) NOT NULL,
+        idTipoGasto INT NOT NULL,
+        idCartao VARCHAR(16) NULL,
+        PRIMARY KEY (idGasto),
+        FOREIGN KEY (idTipoGasto) REFERENCES TipoGasto (idTipoGasto),
+        FOREIGN KEY (idCartao) REFERENCES Cartao (idCartao));
+
+
