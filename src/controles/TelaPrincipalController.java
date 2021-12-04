@@ -70,7 +70,11 @@ public class TelaPrincipalController implements Initializable {
     }
 
     @FXML
-    private void alterarGasto(ActionEvent event) {
+    private void alterarGasto(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/telas/TelaGasto.fxml"));   
+            
+        Parent parent = fxmlLoader.load(); 
+        scTodo.setCenter(parent);
     }
 
     @FXML

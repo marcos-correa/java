@@ -97,7 +97,7 @@ public class TipoGasto implements Serializable {
 
     @Override
     public String toString() {
-        return "bancoDados.TipoGasto[ idTipoGasto=" + idTipoGasto + " ]";
+        return descricaoTipo;
     }
     
 }

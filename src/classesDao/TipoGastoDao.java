@@ -5,6 +5,9 @@
 package classesDao;
 
 import bancoDados.TipoGasto;
+import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import jpaControles.TipoGastoJpaController;
 import jpaControles.exceptions.IllegalOrphanException;
 import jpaControles.exceptions.NonexistentEntityException;
@@ -42,5 +45,14 @@ public class TipoGastoDao extends ClasseDaoAbstract{
             throw new NonexistentEntityException("Tipo de Gasto "+chave+" não cadastrado");
         }
         return objeto;
+    }
+
+    public List<TipoGasto> listar(){
+        //List list = FXCollections.observableArrayList();;
+        List <TipoGasto> lista = objetoJPA.findTipoGastoEntities();
+        /*for(TipoGasto tipo:lista){
+            list.add(tipo.getDescricaoTipo());
+        }*/
+        return lista;
     }
 }

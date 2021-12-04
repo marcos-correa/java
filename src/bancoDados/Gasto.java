@@ -6,6 +6,7 @@ package bancoDados;
 
 import java.io.Serializable;
 import java.util.Date;
+import javafx.scene.control.DatePicker;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -75,6 +76,14 @@ public class Gasto implements Serializable {
     public void setIdGasto(Integer idGasto) {
         this.idGasto = idGasto;
     }
+    
+    public TipoGasto getTipoGasto() {
+       return idTipoGasto;
+    }
+    
+    public void setTipoGasto(TipoGasto idTipoGasto) {
+       this.idTipoGasto = idTipoGasto;
+    }
 
     public Date getData() {
         return data;
@@ -139,6 +148,10 @@ public class Gasto implements Serializable {
     @Override
     public String toString() {
         return "bancoDados.Gasto[ idGasto=" + idGasto + " ]";
+    }
+
+    public void setData(DatePicker cxData) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
