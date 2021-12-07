@@ -6,6 +6,7 @@ package controles;
 
 import bancoDados.Bandeira;
 import bancoDados.Cartao;
+<<<<<<< HEAD
 import bancoDados.FormasPagamento;
 import classesDao.CartaoDao;
 import java.net.URL;
@@ -16,6 +17,11 @@ import java.time.ZoneId;
 import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
+=======
+import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.ResourceBundle;
+>>>>>>> 12bbfe8 (Tela cartão e mudanças)
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -24,12 +30,16 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+<<<<<<< HEAD
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.AnchorPane;
 import jpaControles.exceptions.IllegalOrphanException;
 import jpaControles.exceptions.NonexistentEntityException;
+=======
+import javafx.scene.control.TextField;
+>>>>>>> 12bbfe8 (Tela cartão e mudanças)
 
 /**
  * FXML Controller class

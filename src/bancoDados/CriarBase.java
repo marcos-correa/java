@@ -12,7 +12,7 @@ import java.sql.*;
 public class CriarBase {
     public static void main(String[] args) {
         String url = "jdbc:mysql://localhost";
-        String senha = "clarindo";
+        String senha = "root";
         String user = "root";
         String baseBD = "GastosDiarios";
         String sql = "CREATE DATABASE " + baseBD;
