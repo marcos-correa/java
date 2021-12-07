@@ -3,11 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/dinha/OneDrive/Documentos/NetBeansProjects/GastosDiarios/src/bancoDados/Gasto.java</file>
-            <file>file:/C:/Users/dinha/OneDrive/Documentos/NetBeansProjects/GastosDiarios/src/bancoDados/Cartao.java</file>
-            <file>file:/C:/Users/dinha/OneDrive/Documentos/NetBeansProjects/GastosDiarios/src/classesDao/CartaoDao.java</file>
-            <file>file:/C:/Users/dinha/OneDrive/Documentos/NetBeansProjects/GastosDiarios/src/controles/TelaGastoController.java</file>
-            <file>file:/C:/Users/dinha/OneDrive/Documentos/NetBeansProjects/GastosDiarios/src/bancoDados/FormasPagamento.java</file>
+            <file>file:/C:/Users/marcos/Documents/java/java/src/classesDao/TipoGastoDao.java</file>
+            <file>file:/C:/Users/marcos/Documents/java/java/src/bancoDados/TipoGasto.java</file>
+            <file>file:/C:/Users/marcos/Documents/java/java/src/bancoDados/Cartao.java</file>
+            <file>file:/C:/Users/marcos/Documents/java/java/src/bancoDados/Gasto.java</file>
+            <file>file:/C:/Users/marcos/Documents/java/java/src/controles/TelaCartaoController.java</file>
+            <file>file:/C:/Users/marcos/Documents/java/java/src/bancoDados/Bandeira.java</file>
+            <file>file:/C:/Users/marcos/Documents/java/java/src/controles/TelaTipoGastoController.java</file>
         </group>
     </open-files>
 </project-private>

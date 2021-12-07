@@ -14,10 +14,10 @@ import java.sql.*;
 public class CriarTabelas {
     public static void main(String[] args) {
         String url = "jdbc:mysql://localhost:3306/GastosDiarios";
-        String senha = "clarindo";
+        String senha = "root";
         String user = "root";
         try{
-           
+        
            BufferedReader arq = new BufferedReader(new FileReader("gasto.txt")); 
            Connection conexao = DriverManager.getConnection(url, user, senha);
            Statement sessao = conexao.createStatement();

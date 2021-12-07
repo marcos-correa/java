@@ -90,7 +90,11 @@ public class TelaPrincipalController implements Initializable {
     }
 
     @FXML
-    private void alterarCartao(ActionEvent event) {
+    private void alterarCartao(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/telas/TelaCartao.fxml"));   
+            
+        Parent parent = fxmlLoader.load();
+        scTodo.setCenter(parent);        
     }
     
 }
