@@ -36,6 +36,7 @@ public class TipoGastoDao extends ClasseDaoAbstract{
     
     public void excluir(Integer chave) throws NonexistentEntityException, IllegalOrphanException {
         objetoJPA.destroy(chave);
+        
     }
 
     

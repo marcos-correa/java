@@ -124,6 +124,7 @@ public class TelaTipoGastoController implements Initializable {
     private void excluir(ActionEvent event) {
         try {
             new TipoGastoDao().excluir(Integer.parseInt(txCdg.getText()));
+            System.out.println("Exclusão com sucesso");
         } catch (NonexistentEntityException ex) {
             System.out.println("Erro na exclusão: " + ex.getMessage());
         } catch (IllegalOrphanException ex) {

@@ -54,7 +54,11 @@ public class TelaPrincipalController implements Initializable {
     }    
 
     @FXML
-    private void abrirTab(ActionEvent event) {
+    private void abrirTab(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/telas/TelaTabelaPrincipal.fxml"));   
+            
+        Parent parent = fxmlLoader.load(); 
+        scTodo.setCenter(parent);
     }
 
     @FXML

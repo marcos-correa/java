@@ -5,6 +5,7 @@
 package classesDao;
 
 import bancoDados.Gasto;
+import java.util.List;
 import jpaControles.GastoJpaController;
 import jpaControles.exceptions.IllegalOrphanException;
 import jpaControles.exceptions.NonexistentEntityException;
@@ -42,5 +43,12 @@ public class GastoDao extends ClasseDaoAbstract{
             throw new NonexistentEntityException("Gasto "+chave+" não cadastrado");
         }
         return objeto;
+    }
+    
+    public List<Gasto> listar(){
+        
+        List <Gasto> lista = objetoJPA.findGastoEntities();
+  
+        return lista;
     }
 }

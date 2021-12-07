@@ -199,11 +199,14 @@ public class TelaGastoController implements Initializable {
     private void excluir(ActionEvent event) {
         try {
             new GastoDao().excluir(Integer.parseInt(txCdg.getText()));
+            System.out.println("Exclusão com sucesso");
+       
         } catch (NonexistentEntityException ex) {
             System.out.println("Erro na exclusão: " + ex.getMessage());
         } catch (IllegalOrphanException ex) {
            System.out.println("Erro na exclusão: " + ex.getMessage());
         }
+         
     }
 
     @FXML
