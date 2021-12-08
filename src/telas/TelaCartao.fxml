@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <<<<<<< HEAD
+<<<<<<< HEAD
 <?import javafx.scene.text.Font?>
 
 <BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controles.TelaCartaoController">
@@ -17,12 +18,17 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controles.TelaCartaoController">
 >>>>>>> 12bbfe8 (Tela cartão e mudanças)
+=======
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controles.TelaCartaoController">
+>>>>>>> 12bbfe8927e49f2b2b60d0acfe300a84bafdcad8
    <center>
       <HBox>
          <children>
             <AnchorPane id="AnchorPane" prefHeight="315.0" prefWidth="243.0">
     
 </AnchorPane>
+<<<<<<< HEAD
             <AnchorPane fx:id="scCartao" prefHeight="268.0" prefWidth="357.0" visible="false">
                <children>
                   <ComboBox fx:id="bdrCrt" layoutX="167.0" layoutY="105.0" onAction="#setBandeira" prefHeight="26.0" prefWidth="152.0" />
@@ -36,6 +42,21 @@
                   <Label layoutX="30.0" layoutY="109.0" text="Bandeira" />
                   <Label layoutX="30.0" layoutY="149.0" text="Data de Validade" />
                   <DatePicker fx:id="dtVldCrt" layoutX="168.0" layoutY="145.0" onAction="#setDateCard" prefHeight="25.0" prefWidth="152.0" />
+=======
+            <AnchorPane prefHeight="268.0" prefWidth="357.0">
+               <children>
+                  <ComboBox fx:id="bdrCartao" layoutX="146.0" layoutY="115.0" onAction="#setBandeira" prefWidth="150.0" />
+                  <Label layoutX="26.0" layoutY="35.0" text="Número do cartão" />
+                  <Label layoutX="29.0" layoutY="73.0" text="Nome" />
+                  <TextField fx:id="nmrCrt" layoutX="144.0" layoutY="31.0" />
+                  <TextField fx:id="nmCrt" layoutX="145.0" layoutY="69.0" prefHeight="25.0" prefWidth="151.0" />
+                  <Button layoutX="53.0" layoutY="237.0" mnemonicParsing="false" onAction="#gravar" text="Gravar" />
+                  <Button layoutX="168.0" layoutY="237.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
+                  <Button layoutX="274.0" layoutY="237.0" mnemonicParsing="false" onAction="#sair" text="Sair" />
+                  <Label layoutX="22.0" layoutY="119.0" text="Bandeira" />
+                  <Label layoutX="19.0" layoutY="162.0" text="Data de Validade" />
+                  <DatePicker fx:id="dtVldCrt" layoutX="143.0" layoutY="158.0" onAction="#setDateCard" prefHeight="25.0" prefWidth="152.0" />
+>>>>>>> 12bbfe8927e49f2b2b60d0acfe300a84bafdcad8
                </children>
             </AnchorPane>
          </children>
@@ -45,6 +66,7 @@
       <AnchorPane prefHeight="106.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
             <Button layoutX="14.0" layoutY="42.0" mnemonicParsing="false" onAction="#VisualizarTudo" text="Visualizar Dados" />
+<<<<<<< HEAD
             <Label layoutX="188.0" layoutY="46.0" text="Código do Cartão" />
             <TextField fx:id="cnsCrt" layoutX="291.0" layoutY="42.0" />
             <ToggleButton fx:id="btCnsltr" layoutX="452.0" layoutY="42.0" mnemonicParsing="false" onAction="#consultar" text="Consultar" />
@@ -68,4 +90,13 @@
          </children>
       </AnchorPane>
    </bottom>
+=======
+            <Label layoutX="188.0" layoutY="46.0" text="Código tipo Gasto" />
+            <TextField layoutX="291.0" layoutY="42.0" />
+            <ToggleButton layoutX="452.0" layoutY="42.0" mnemonicParsing="false" onAction="#consultar" text="Consultar" />
+            <ToggleButton layoutX="530.0" layoutY="42.0" mnemonicParsing="false" onAction="#inserir" text="Novo" />
+         </children>
+      </AnchorPane>
+   </top>
+>>>>>>> 12bbfe8927e49f2b2b60d0acfe300a84bafdcad8
 </BorderPane>

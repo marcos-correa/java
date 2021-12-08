@@ -7,6 +7,7 @@ package controles;
 import bancoDados.Bandeira;
 import bancoDados.Cartao;
 <<<<<<< HEAD
+<<<<<<< HEAD
 import bancoDados.FormasPagamento;
 import classesDao.CartaoDao;
 import java.net.URL;
@@ -22,6 +23,11 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.ResourceBundle;
 >>>>>>> 12bbfe8 (Tela cartão e mudanças)
+=======
+import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.ResourceBundle;
+>>>>>>> 12bbfe8927e49f2b2b60d0acfe300a84bafdcad8
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -30,6 +36,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
+<<<<<<< HEAD
 <<<<<<< HEAD
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -40,6 +47,9 @@ import jpaControles.exceptions.NonexistentEntityException;
 =======
 import javafx.scene.control.TextField;
 >>>>>>> 12bbfe8 (Tela cartão e mudanças)
+=======
+import javafx.scene.control.TextField;
+>>>>>>> 12bbfe8927e49f2b2b60d0acfe300a84bafdcad8
 
 /**
  * FXML Controller class
@@ -58,6 +68,7 @@ public class TelaCartaoController implements Initializable {
     private DatePicker dtVldCrt;
 
     @FXML
+<<<<<<< HEAD
     private TextField cnsCrt;
     
     @FXML
@@ -77,15 +88,24 @@ public class TelaCartaoController implements Initializable {
     @FXML
     private AnchorPane scCartao;
    
+=======
+    private ComboBox<Bandeira> bdrCartao;
+>>>>>>> 12bbfe8927e49f2b2b60d0acfe300a84bafdcad8
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+<<<<<<< HEAD
         listBandeira = Bandeira.values();
         bdrCrt.setItems( FXCollections.observableArrayList(listBandeira));
         msgCrt.setStyle("");
+=======
+        Bandeira[] list = Bandeira.values();
+        bdrCartao.setItems( FXCollections.observableArrayList( list));
+        System.out.println("iu");
+>>>>>>> 12bbfe8927e49f2b2b60d0acfe300a84bafdcad8
     }    
 
     @FXML
@@ -94,6 +114,7 @@ public class TelaCartaoController implements Initializable {
 
     @FXML
     private void consultar(ActionEvent event) {
+<<<<<<< HEAD
         resetMessage();
         try{
             Cartao cartao = (Cartao) new CartaoDao().consultar(cnsCrt.getText());
@@ -185,12 +206,75 @@ public class TelaCartaoController implements Initializable {
         } catch (IllegalOrphanException ex) {
              msgCrt.setText("Erro na exclusão: " + ex.getMessage());
         }
+=======
+//        bdrCartao.getSelectionModel().select(2);
+//        System.out.println("selecionado? ->"+bdrCartao.getSelectionModel());
+    }
+
+//    getIndexOfList(String str){
+//        for
+//                
+//            return 1
+//    }
+
+    @FXML
+    private void inserir(ActionEvent event) {
+    }
+
+    @FXML
+    private void gravar(ActionEvent event) {
+        
+        Cartao cartao = new Cartao();
+
+        cartao.setBandeira(bdrCartao.getValue().getDescricao());
+        String bandeira = bdrCartao.getValue().getDescricao();
+//        try {
+//            Cartao cartao = new Cartao();
+//            SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+//            bandeira = testarEnumBandeira(bdCrt.getValue());
+//            cartao.setBandeira(bandeira);
+//            cartao.setDataValidade(formato.parse(txValidade.getText()));
+//            cartao.setNome(txNome.getText());
+//            if (btNovo.isSelected()) {
+//                try {
+//                    new CartaoDao().inserir(cartao);
+//                    System.out.println("Inserção concluída com sucesso!!");
+//                } catch (Exception ex) {
+//                    System.out.println("Erro na inserção: " + ex.getMessage());
+//                }
+//            } else {
+//                try {
+//                    new CartaoDao().editar(cartao);
+//                } catch (Exception ex) {
+//                    System.out.println("Erro na alteração: " + ex.getMessage());
+//                }
+//            }
+//        } catch (ParseException  ex) {
+//            // chamar uma tela
+//           
+//            //apresentar o erro
+//            
+//            // ok de fechar
+//
+//            
+//            System.out.println("Formato de entrada incorreto: " + ex.getMessage());
+//        } catch (Exception ex) {
+//           System.out.println("Formato de entrada incorreto: " + ex.getMessage());
+//        }
+    }
+
+    @FXML
+    private void excluir(ActionEvent event) {
+>>>>>>> 12bbfe8927e49f2b2b60d0acfe300a84bafdcad8
     }
 
     @FXML
     private void sair(ActionEvent event) {
+<<<<<<< HEAD
         resetMessage();
          Platform.exit();
+=======
+>>>>>>> 12bbfe8927e49f2b2b60d0acfe300a84bafdcad8
     }
 
     @FXML
@@ -200,6 +284,7 @@ public class TelaCartaoController implements Initializable {
 
     @FXML
     private void setBandeira(ActionEvent event) {
+<<<<<<< HEAD
         bdrCrt.getValue();       
     }
     
@@ -209,4 +294,9 @@ public class TelaCartaoController implements Initializable {
     }
     
     
+=======
+        bdrCartao.getValue();       
+    }
+    
+>>>>>>> 12bbfe8927e49f2b2b60d0acfe300a84bafdcad8
 }
