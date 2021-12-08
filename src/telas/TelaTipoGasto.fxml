@@ -7,10 +7,11 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="scTpGst" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controles.TelaTipoGastoController">
+<BorderPane fx:id="scTpGst" prefHeight="457.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controles.TelaTipoGastoController">
    <center>
-      <HBox fx:id="scCtn">
+      <HBox fx:id="scCtn" prefWidth="600.0">
          <children>
             <AnchorPane id="AnchorPane" fx:id="scTab" prefHeight="315.0" prefWidth="243.0">
     
@@ -21,9 +22,9 @@
                   <Label fx:id="lbDsc" layoutX="39.0" layoutY="94.0" text="Descrição" />
                   <TextField fx:id="txCdg" layoutX="118.0" layoutY="27.0" />
                   <TextField fx:id="txDsc" layoutX="118.0" layoutY="90.0" />
-                  <Button fx:id="btGrv" layoutX="53.0" layoutY="237.0" mnemonicParsing="false" onAction="#gravar" text="Gravar" />
-                  <Button fx:id="btExc" layoutX="168.0" layoutY="237.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
-                  <Button fx:id="btSair" layoutX="274.0" layoutY="237.0" mnemonicParsing="false" onAction="#sair" text="Sair" />
+                  <Button fx:id="btGrv" layoutX="53.0" layoutY="182.0" mnemonicParsing="false" onAction="#gravar" text="Gravar" />
+                  <Button fx:id="btExc" layoutX="168.0" layoutY="182.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
+                  <Button fx:id="btSair" layoutX="274.0" layoutY="182.0" mnemonicParsing="false" onAction="#sair" text="Sair" />
                </children>
             </AnchorPane>
          </children>
@@ -40,4 +41,19 @@
          </children>
       </AnchorPane>
    </top>
+   <bottom>
+      <AnchorPane id="label" prefHeight="97.0" prefWidth="600.0" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label id="label" fx:id="mensagem" alignment="CENTER" contentDisplay="CENTER" layoutX="120.0" layoutY="22.0" prefHeight="51.0" prefWidth="367.0" styleClass="message" stylesheets="@styles.css" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font></Label>
+            <Label fx:id="mensagemSuccess" alignment="CENTER" contentDisplay="CENTER" layoutX="120.0" layoutY="22.0" prefHeight="51.0" prefWidth="367.0" styleClass="messageSuccess" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </bottom>
 </BorderPane>

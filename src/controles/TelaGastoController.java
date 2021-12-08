@@ -89,6 +89,10 @@ public class TelaGastoController implements Initializable {
     private TextField txCrt;
     
     private TipoGasto opTipoGasto;
+    @FXML
+    private Label mensagem;
+    @FXML
+    private Label mensagemSuccess;
     
     /**
      * Initializes the controller class.
@@ -110,6 +114,7 @@ public class TelaGastoController implements Initializable {
 
     @FXML
     private void consultar(ActionEvent event) {
+        resetarMensage();
         try {
             //pegar código do textfield  e enviar para o método de consulta do banco
             Gasto gasto = (Gasto) new GastoDao().consultar(Integer.parseInt(txTpGst.getText()));
@@ -138,21 +143,24 @@ public class TelaGastoController implements Initializable {
             scCad.setVisible(true);
         }catch (NonexistentEntityException ex) {
              System.out.println(ex.getMessage());
+             mensagem.setText("O código " + txTpGst.getText() + " não foi encontrado na base");
         }
          catch (NumberFormatException e) {
+            mensagem.setText("O código deve ser um número inteiro " + txTpGst.getText());
             System.out.println("Código deve ser um número inteiro " + txTpGst.getText());
         } 
     }
 
     @FXML
     private void inserir(ActionEvent event) {
+        
         scCad.setVisible(true);
         
     }
 
     @FXML
     private void gravar(ActionEvent event) {
-        
+        resetarMensage();
     
         try {
             Gasto gasto = new Gasto();
@@ -179,32 +187,41 @@ public class TelaGastoController implements Initializable {
                 try {
                     new GastoDao().inserir(gasto);
                     System.out.println("Inserção concluída com sucesso!!");
+                    mensagemSuccess.setText("Inserção concluída com sucesso!!");
                 } catch (Exception ex) {
+                    mensagem.setText("Erro na inserção: " + ex.getMessage());
                     System.out.println("Erro na inserção: " + ex.getMessage());
                 }
             } else {
                 try {
                     new GastoDao().editar(gasto);
+                    mensagemSuccess.setText("Alteração realizada com sucesso!!");
                 } catch (Exception ex) {
+                    mensagem.setText("Erro na alteração: " + ex.getMessage());
                     System.out.println("Erro na alteração: " + ex.getMessage());
                 }
             }
         } catch (Exception ex) {
            System.out.println("Formato de entrada incorreto: " + ex.getMessage());
+           mensagem.setText("Formato de entrada incorreto: " + ex.getMessage());
         }
         
     }
 
     @FXML
     private void excluir(ActionEvent event) {
+        resetarMensage();
         try {
             new GastoDao().excluir(Integer.parseInt(txCdg.getText()));
+            mensagemSuccess.setText("Exclusão com sucesso!!");
             System.out.println("Exclusão com sucesso");
        
         } catch (NonexistentEntityException ex) {
             System.out.println("Erro na exclusão: " + ex.getMessage());
+            mensagem.setText("O código  " + txTpGst.getText() + " não foi encontrado na base");
         } catch (IllegalOrphanException ex) {
            System.out.println("Erro na exclusão: " + ex.getMessage());
+           mensagem.setText("Erro na exclusão: " + ex.getMessage());
         }
          
     }
@@ -232,6 +249,11 @@ public class TelaGastoController implements Initializable {
     @FXML
     private void clickLbCartao(ActionEvent event) {
         
+    }
+    
+    private void resetarMensage(){
+        mensagem.setText("");
+        mensagemSuccess.setText("");
     }
     
 }

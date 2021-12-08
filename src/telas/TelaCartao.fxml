@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controles.TelaCartaoController">
+   <center>
+      <HBox>
+         <children>
+            <AnchorPane id="AnchorPane" prefHeight="315.0" prefWidth="243.0">
+    
+</AnchorPane>
+            <AnchorPane prefHeight="268.0" prefWidth="357.0">
+               <children>
+                  <ComboBox fx:id="bdrCrt" layoutX="167.0" layoutY="105.0" onAction="#setBandeira" prefHeight="26.0" prefWidth="152.0" />
+                  <Label layoutX="30.0" layoutY="31.0" text="Número do cartão" />
+                  <Label layoutX="30.0" layoutY="69.0" text="Nome" />
+                  <TextField fx:id="nmrCrt" layoutX="167.0" layoutY="27.0" prefHeight="26.0" prefWidth="152.0" />
+                  <TextField fx:id="nmCrt" layoutX="168.0" layoutY="65.0" prefHeight="26.0" prefWidth="151.0" />
+                  <Button layoutX="53.0" layoutY="237.0" mnemonicParsing="false" onAction="#gravar" text="Gravar" />
+                  <Button layoutX="168.0" layoutY="237.0" mnemonicParsing="false" onAction="#excluir" text="Excluir" />
+                  <Button layoutX="274.0" layoutY="237.0" mnemonicParsing="false" onAction="#sair" text="Sair" />
+                  <Label layoutX="30.0" layoutY="109.0" text="Bandeira" />
+                  <Label layoutX="30.0" layoutY="149.0" text="Data de Validade" />
+                  <DatePicker fx:id="dtVldCrt" layoutX="168.0" layoutY="145.0" onAction="#setDateCard" prefHeight="25.0" prefWidth="152.0" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </center>
+   <top>
+      <AnchorPane prefHeight="106.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="14.0" layoutY="42.0" mnemonicParsing="false" onAction="#VisualizarTudo" text="Visualizar Dados" />
+            <Label layoutX="188.0" layoutY="46.0" text="Código do Cartão" />
+            <TextField fx:id="cnsCrt" layoutX="291.0" layoutY="42.0" />
+            <ToggleButton fx:id="btCnsltr" layoutX="452.0" layoutY="42.0" mnemonicParsing="false" onAction="#consultar" text="Consultar" />
+            <ToggleButton fx:id="btNv" layoutX="530.0" layoutY="42.0" mnemonicParsing="false" onAction="#inserir" text="Novo" />
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane id="label" prefHeight="56.0" prefWidth="602.0" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="msgCrt" layoutX="31.0" layoutY="5.0" prefHeight="42.0" prefWidth="494.0" styleClass="msgCrt" stylesheets="@styles.css" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="msgCrtSuccess" layoutX="38.0" layoutY="8.0" prefHeight="42.0" prefWidth="494.0" styleClass="msgCrtSuccess" stylesheets="@styles.css" textAlignment="CENTER">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

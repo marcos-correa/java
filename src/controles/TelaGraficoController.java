@@ -61,12 +61,15 @@ public class TelaGraficoController implements Initializable {
         for(Gasto objeto:lista){
             DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
             String data = dateFormat.format(objeto.getData());
-            if(diario.contains(data)){
+            GastoDia vd =  new GastoDia(data,objeto.getValor());
+            Integer index = vd.iguais(diario);
+            if (index != -1)
+            {
                 System.out.println(data);
-                diario.get(diario.indexOf(data)).setValorAcumulado(objeto.getValor());
+                diario.get(index).setValorAcumulado(objeto.getValor());
             }
             else{
-                GastoDia vd =  new GastoDia(data,objeto.getValor());
+               
                 diario.add(vd);
             }
             
@@ -107,6 +110,16 @@ public class TelaGraficoController implements Initializable {
         public Float getValor() {
             return valor;
         }
+        
+        public Integer iguais(ObservableList<GastoDia> list) {
+            for(GastoDia object: list){
+                if ((this.data.equals(object.data))) {
+                    return list.indexOf(object);
+            }
+            }
+            
+            return -1;
+    }
 
        
     }

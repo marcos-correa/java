@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/dinha/OneDrive/Documentos/NetBeansProjects/GastosDiarios/src/controles/TelaTipoGastoController.java</file>
+            <file>file:/C:/Users/dinha/OneDrive/Documentos/NetBeansProjects/GastosDiarios/src/classesDao/TipoGastoDao.java</file>
             <file>file:/C:/Users/dinha/OneDrive/Documentos/NetBeansProjects/GastosDiarios/src/bancoDados/Gasto.java</file>
-            <file>file:/C:/Users/dinha/OneDrive/Documentos/NetBeansProjects/GastosDiarios/src/bancoDados/Cartao.java</file>
-            <file>file:/C:/Users/dinha/OneDrive/Documentos/NetBeansProjects/GastosDiarios/src/classesDao/CartaoDao.java</file>
-            <file>file:/C:/Users/dinha/OneDrive/Documentos/NetBeansProjects/GastosDiarios/src/controles/TelaGastoController.java</file>
-            <file>file:/C:/Users/dinha/OneDrive/Documentos/NetBeansProjects/GastosDiarios/src/bancoDados/FormasPagamento.java</file>
+            <file>file:/C:/Users/dinha/OneDrive/Documentos/NetBeansProjects/GastosDiarios/src/app/Principal.java</file>
+            <file>file:/C:/Users/dinha/OneDrive/Documentos/NetBeansProjects/GastosDiarios/src/controles/TelaPrincipalController.java</file>
+            <file>file:/C:/Users/dinha/OneDrive/Documentos/NetBeansProjects/GastosDiarios/src/controles/TelaGraficoController.java</file>
         </group>
     </open-files>
 </project-private>

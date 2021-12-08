@@ -1,0 +1,24 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 7 de dez. de 2021, 22:29:12
+    Author     : marcos
+*/
+.label.msgCrt{
+    -fx-text-fill: #ff0000; 
+}
+
+.label.msgCrtSuccess{
+    -fx-text-fill: seagreen;
+}
+
+.label.message{
+    -fx-text-fill: #ff0000;
+}
+
+.label.messageSuccess{
+    -fx-text-fill: seagreen;
+}
+
