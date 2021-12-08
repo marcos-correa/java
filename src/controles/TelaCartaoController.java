@@ -27,6 +27,7 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.layout.AnchorPane;
 import jpaControles.exceptions.IllegalOrphanException;
 import jpaControles.exceptions.NonexistentEntityException;
 
@@ -63,6 +64,8 @@ public class TelaCartaoController implements Initializable {
     private Label msgCrt;
     @FXML
     private Label msgCrtSuccess;
+    @FXML
+    private AnchorPane scCartao;
    
 
     /**
@@ -91,7 +94,9 @@ public class TelaCartaoController implements Initializable {
             dtVldCrt.setValue(data.toInstant()
                 .atZone(ZoneId.systemDefault())
                 .toLocalDate());
-            bdrCrt.getSelectionModel().select(Bandeira.valueOf(cartao.getBandeira()).ordinal());
+            //bdrCrt.getSelectionModel().select(Bandeira.valueOf(cartao.getBandeira()).ordinal());
+            bdrCrt.getSelectionModel().select(Bandeira.valueOf(cartao.getBandeira().toUpperCase()));
+            scCartao.setVisible(true);
         }catch (NonexistentEntityException ex) {
              System.out.println(ex.getMessage());
              msgCrt.setText("Código não encontrado na base " + nmrCrt.getText());
@@ -103,10 +108,11 @@ public class TelaCartaoController implements Initializable {
 
     @FXML
     private void inserir(ActionEvent event) {
+        scCartao.setVisible(true);
     }
 
     @FXML
-    private void gravar(ActionEvent event) {
+    private void gravar(ActionEvent event)throws AlphaNumException {
         resetMessage();
         try {
             Cartao cartao = new Cartao();
@@ -125,6 +131,14 @@ public class TelaCartaoController implements Initializable {
 
             // Número
             String idCartao = nmrCrt.getText();
+            boolean idCartaoIsNumeric =  idCartao.matches("[+-]?\\d*(\\.\\d+)?");
+            
+            if(!idCartaoIsNumeric){
+                throw new AlphaNumException(idCartao);
+            }
+           
+            
+         
             cartao.setIdCartao(idCartao);
 
 
@@ -142,6 +156,9 @@ public class TelaCartaoController implements Initializable {
                     msgCrt.setText("Erro na alteração do cartão: " + ex.getMessage());
                 }
             }
+        }catch (AlphaNumException ex){
+                    msgCrt.setText(ex.getMessage());
+     
         } catch (Exception  ex) {            
             System.out.println("Formato de entrada incorreto: " + ex.getMessage());
         }

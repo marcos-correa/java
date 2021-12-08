@@ -5,6 +5,7 @@
 package bancoDados;
 
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javafx.scene.control.DatePicker;
 import javax.persistence.Basic;
@@ -144,7 +145,14 @@ public class Gasto implements Serializable {
         }
         return true;
     }
-
+    
+    public String getDataString() {
+        
+        SimpleDateFormat formato = new SimpleDateFormat("dd/MM/yyyy");
+        String dataString = formato.format(data);
+        return dataString ;
+    }
+    
     @Override
     public String toString() {
         return "bancoDados.Gasto[ idGasto=" + idGasto + " ]";

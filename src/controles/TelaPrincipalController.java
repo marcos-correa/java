@@ -7,6 +7,8 @@ package controles;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +18,7 @@ import javafx.print.PageLayout;
 import javafx.print.PrinterJob;
 import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
@@ -36,32 +39,41 @@ public class TelaPrincipalController implements Initializable {
     @FXML
     private MenuItem mnGraf;
     @FXML
-    private MenuItem mnImp;
-    @FXML
     private MenuItem mnGst;
     @FXML
     private MenuItem mnTpGst;
     @FXML
     private MenuItem mnCrt;
-    @FXML
     private AnchorPane scImg;
     @FXML
     private AnchorPane scCont;
     @FXML
     private BorderPane scTodo;
-    @FXML
-    private HBox scMeio;
-    @FXML
     private Label txPrincipal;
+    @FXML
+    private Button btnInicial;
+    @FXML
+    private Label mensagem;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        try {
+            entrarHome();
+        } catch (IOException ex) {
+            Logger.getLogger(TelaPrincipalController.class.getName()).log(Level.SEVERE, null, ex);
+            mensagem.setText("Erro do sistema.");
+        }
     }    
 
+    private void entrarHome() throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/telas/TelaHome.fxml"));   
+            
+        Parent parent = fxmlLoader.load(); 
+        scTodo.setCenter(parent);
+    }
     @FXML
     private void abrirTab(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/telas/TelaTabelaPrincipal.fxml"));   
@@ -78,54 +90,8 @@ public class TelaPrincipalController implements Initializable {
         scTodo.setCenter(parent);
     }
 
-    @FXML
-    private void imprimir(ActionEvent event) {
-        impressao(scImg);
-    }
     
-    private void impressao(Node node){
-        txPrincipal.textProperty().unbind();
-        txPrincipal.setText("Creating a printer job...");
-
-        PrinterJob job = PrinterJob.createPrinterJob();
-        if (job != null) {
-            txPrincipal.textProperty().bind(job.jobStatusProperty().asString());
-            boolean printed = job.printPage(node);
-            if (printed) {
-                job.endJob();
-            }
-            else {
-            txPrincipal.textProperty().unbind();
-            txPrincipal.setText("Printing failed.");
-            }
-         }
-        else {
-      txPrincipal.setText("Could not create a printer job.");
-    }
-  
-    }
-    /*private void impressao(Node noImprimir, Label txPrincipal1){
-        PrinterJob job = PrinterJob.createPrinterJob();
-        JobSettings jobSettings = job.getJobSettings();
-        job.showPrintDialog(janela);
-        job.showPageSetupDialog(janela);
-        PageLayout pageLayout = jobSettings.getPageLayout();
-        double scaleX = pageLayout.getPrintableWidth()
-                /noImprimir.getBoundsInParent().getWidth();
-        System.out.println("Escala X=" + scaleX);
-        double scaleY = pageLayout.getPrintableHeight()
-                /noImprimir.getBoundsInParent().getHeight();
-        System.out.println("Escala Y=" + scaleY);
-        noImprimir.getTransforms().add(new Scale(scaleX, scaleY));
-        
-        boolean printed = job.printPage(noImprimir);
-        if(printed){
-            job.endJob();
-        }else{
-            System.out.println("Falha na impressão");
-        }
-    }
-    */
+    
     @FXML
     private void alterarGasto(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/telas/TelaGasto.fxml"));   
@@ -148,6 +114,11 @@ public class TelaPrincipalController implements Initializable {
             
         Parent parent = fxmlLoader.load(); 
         scTodo.setCenter(parent);
+    }
+
+    @FXML
+    private void voltarInicial(ActionEvent event) throws IOException {
+        entrarHome();
     }
     
 }

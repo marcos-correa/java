@@ -1,35 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane fx:id="scTodo" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controles.TelaPrincipalController">
+<BorderPane fx:id="scTodo" prefHeight="528.0" prefWidth="794.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controles.TelaPrincipalController">
    <center>
-      <HBox fx:id="scMeio" prefWidth="800.0">
-         <children>
-            <AnchorPane fx:id="scImg" prefHeight="293.0" prefWidth="200.0">
-               <children>
-                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="119.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@logoUP.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </AnchorPane>
-            <AnchorPane id="AnchorPane" fx:id="scCont" prefHeight="400.0" prefWidth="600.0">
-               <children>
-                  <Label fx:id="txPrincipal" layoutX="292.0" layoutY="192.0" text="Texto teste" />
-               </children>
-            </AnchorPane>
-         </children>
-      </HBox>
+      <AnchorPane fx:id="scCont" />
    </center>
    <top>
       <MenuBar BorderPane.alignment="CENTER">
@@ -38,7 +20,6 @@
             <items>
               <MenuItem fx:id="mnTab" mnemonicParsing="false" onAction="#abrirTab" text="Tabela" />
                   <MenuItem fx:id="mnGraf" mnemonicParsing="false" onAction="#abrirGraf" text="Gráfico" />
-                  <MenuItem fx:id="mnImp" mnemonicParsing="false" onAction="#imprimir" text="Impressão" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Manutenção">
@@ -51,4 +32,22 @@
         </menus>
       </MenuBar>
    </top>
+   <left>
+      <AnchorPane prefHeight="400.0" prefWidth="98.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="btnInicial" layoutX="21.0" layoutY="14.0" mnemonicParsing="false" onAction="#voltarInicial" prefHeight="25.0" prefWidth="57.0" text="Inicial" />
+         </children>
+      </AnchorPane>
+   </left>
+   <bottom>
+      <AnchorPane prefHeight="59.0" prefWidth="702.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="mensagem" layoutX="152.0" layoutY="5.0" prefHeight="45.0" prefWidth="563.0" textAlignment="CENTER" textFill="#f50707">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </bottom>
 </BorderPane>
